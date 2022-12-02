@@ -46,27 +46,12 @@ class BlankViewModel : ViewModel() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
 
-                    /*var name: TextView = context!!.findViewById(R.id.nameCompany)
-                    var img: ImageView = context!!.findViewById(R.id.imgCompany)
-
-                    name.text = it.first().name.toString()
-
-                    Picasso.with(context!!.application)
-                        .load("https://lifehack.studio/test_task/" + it.first().img.toString())
-                        .placeholder(img.drawable)
-                        .into(img)*/
-                    Log.e("TAG", ("-------${it.count().toString()}"))
                     for (i in 0..it.count()-1) {
                         autocreateCardCompany(context,
                             it[i].id.toString().toInt(),
                             it[i].name.toString(),
                             "https://lifehack.studio/test_task/" + it[i].img.toString())
                     }
-                    /*autocreateCardCompany(context,
-                        it.first().id.toString().toInt(),
-                        it.first().name.toString(),
-                        "https://lifehack.studio/test_task/" + it.first().img.toString())*/
-
 
                     Log.e("TAG", ("-------${it.first().name.toString()}"))
                 }, {
@@ -157,9 +142,7 @@ class BlankViewModel : ViewModel() {
         nameParams.applyTo(mainLay)
 
         mainLay.setOnClickListener(View.OnClickListener {
-/*            if (ID == 6 || ID == 7) {
-                Toast.makeText(contextApp, "This page is not defined", Toast.LENGTH_SHORT).show()
-            }*/
+
             (contextApp as? TestApp)?.let { fetchDescriptionList(it.testAPI, ID.toString(), contextApp) }!! //fetchDescriptionList(contextApp as TestApp.TestAPI, context, ID)!!
 
         })

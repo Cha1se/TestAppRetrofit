@@ -28,8 +28,7 @@ class BlankFragment : Fragment() {
     @Deprecated("Deprecated in Java")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        /*var name: TextView = MainActivity().findViewById(R.id.nameCompany)
-        var img: ImageView = MainActivity().findViewById(R.id.imgCompany)*/
+
         viewModel = ViewModelProvider(this).get(BlankViewModel::class.java)
 
         (activity?.application as? TestApp)?.let { viewModel.fetchTestList(it.testAPI, activity) }
