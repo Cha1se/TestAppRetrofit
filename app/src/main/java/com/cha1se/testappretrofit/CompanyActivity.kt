@@ -33,6 +33,7 @@ class CompanyActivity : AppCompatActivity() {
 
         Picasso.with(this)
             .load("https://lifehack.studio/test_task/" + initList[2])
+            .placeholder(R.drawable.no_image)
             .into(imgCompany)
 
         decriptionCompany.text = initList[3]

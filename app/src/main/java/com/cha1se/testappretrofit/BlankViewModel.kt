@@ -115,6 +115,7 @@ class BlankViewModel : ViewModel() {
 
         Picasso.with(contextApp)
             .load(imgUri)
+            .placeholder(R.drawable.no_image)
             .into(image)
 
         name.apply {
